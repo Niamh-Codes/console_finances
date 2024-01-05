@@ -94,10 +94,31 @@ console.log("----------------------------")
 
 // The total number of months included in the dataset.
 console.log("Total Months : " + finances.length);
+//86 months
 
 // The net total amount of Profit/Losses over the entire period.
+var netTotal = [];
+
+for (var i = 0; i < finances.length; i++) {
+  netTotal.push(finances[i][1]);
+}
+
+// console.log("Net total:", netTotal);
+
+var netTotal = netTotal.reduce(function (acc, curr) {
+  return acc + curr;
+}, 0);
+
+console.log("Total £ :", netTotal);
 
 // The average of the changes in Profit/Losses over the entire period.
+
+// var profitLoss = [];
+// for (var i = 0; i < finances.length; i++) {
+//   profitLoss.push((finances[i][0]) - (finances[i][0]));
+// }
+
+// console.log("Average Profit / Loss £ :", profitLoss);
 
 // You will need to track what the total change in profits is from month to month and then find the average.
 
